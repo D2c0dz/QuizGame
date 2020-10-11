@@ -48,6 +48,11 @@ def nextquestion():
   global CurrentQuestion, NumberofQuestion
   CurrentQuestion=CurrentQuestion+1
   NumberofQuestion=NumberofQuestion+1
+  t.goto(-255,0)
+  t.write("press n to continue. To select your answer choice press the letter next to the answer that you choose on the keyboard.")
+  t.goto(-175,0)
+  t.bgpic("taxfiles.gif")
+
   print("CurrentQuestion="+str(CurrentQuestion))
   print("NumberofQuestion="+str(NumberofQuestion))
   print(QuestionBank[CurrentQuestion])
@@ -63,7 +68,10 @@ def nextquestion():
     QuestionBank[CurrentQuestion]()
 
 def askquestion1():
-  screen.bgcolor('black')
+  t.goto(-175,0)
+  screen.bgpic('taxfiles.gif')
+  t.goto(255,0)
+  t.write("press n to continue. To select your answer choice press the letter next to the answer that you choose on the keyboard.")
   # Question 1
   t.penup()
   t.goto(0, 400)
@@ -107,7 +115,7 @@ def askquestion1():
   # tells how to identify right vs wrong by telling which one I put first in the
 
 def askquestion2():
-  screen.bgcolor('black')
+  screen.bgpic('taxfiles.gif')
   # Question 2
   t.penup()
   t.goto(0, 400)
