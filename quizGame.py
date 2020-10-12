@@ -6,19 +6,19 @@ import random
 # https://github.com/wynand1004/Projects/blob/master/Space%20Arena/space_arena_18.py
 # https://stackoverflow.com/questions/34033701/python-how-to-reset-the-turtle-graphics-window#:~:text=position%2C%20etc.)-,turtle.,window%20to%20it's%20original%20state.
 #
-# REQUIREMENTS: python3, python3-tkinter, turtle, screen resolution = 1280 x 720
+# REQUIREMENTS: python3, python3-tkinter, turtle, screen resolution = 1280 x 1024
 # Author: Darin Dhiman
 # TO DO:
 #   enter more questions (10 total), end quiz after 5 questions, randomize questions
 
 # GLOBAL VARIABLES ---------------------------------------------------------------
-CurrentQuestion=random.randint(0,9)
-NumberofQuestion=1
+# CurrentQuestion=random.randint(0,4)
+CurrentQuestion=0
+NumberofQuestion=0
 # uses the screen feature which is avalible in the turtle library for the question to be written on
 screen = turtle.Screen()
 # ensures that the screen will be that many pixles in hieght and width
-screen.setup(1280,720)
-
+screen.setup(1280,1024)
 # FUNCTIONS-----------------------------------------------------------------------
 def rightanswer():
   # call when user enters
@@ -26,7 +26,8 @@ def rightanswer():
   t.color('green')
   style=('Courier', 20, 'bold')
   t.write('CORRECT!',align='right', font=style)
-  
+  time.sleep(3)
+  nextquestion()
 
 
 
@@ -40,38 +41,46 @@ def wronganswer():
   style=('Courier', 20, 'bold') 
   # starts writing    
   t.write('INCORRECT!',align='center', font=style)
+  time.sleep(3)
+  nextquestion()
 
 def nextquestion():
 # when user put their answer clear the screen and call the next question
   # clears the screen for the next question
   screen.clearscreen()
-  global CurrentQuestion, NumberofQuestion
-  CurrentQuestion=CurrentQuestion+1
-  NumberofQuestion=NumberofQuestion+1
-  t.goto(-255,0)
-  t.write("press n to continue. To select your answer choice press the letter next to the answer that you choose on the keyboard.")
-  t.goto(-175,0)
-  t.bgpic("taxfiles.gif")
+  
+  global CurrentQuestion, NumberofQuestion, QuestionBank
+  
+  screen.bgpic("taxonomy.gif")
 
   print("CurrentQuestion="+str(CurrentQuestion))
   print("NumberofQuestion="+str(NumberofQuestion))
-  print(QuestionBank[CurrentQuestion])
-
-  if NumberofQuestion >5:
+  # print(str(QuestionBank[CurrentQuestion]))
+  # make sure to only ask 5 questions
+  if NumberofQuestion >4:
+  # contains instrustions for what to do if it has already asked 5 questions  
     t.penup()
     t.goto(-30,-30)  
     style=('Courier', 35, 'bold') 
     t.write('GOODBYE. THANKS FOR PLAYING!',align='center', font=style)
     time.sleep(2)
-    exit()   
-  else:  
+    exit()
+
+  elif NumberofQuestion==1: 
+    # calls the askquestion functions from the questionbank list
     QuestionBank[CurrentQuestion]()
+     
+  else:
+    # contains instrustions for what to do if it has not yet asked 5 questions
+    CurrentQuestion=CurrentQuestion+1
+    NumberofQuestion=NumberofQuestion+1
+    # calls the askquestion functions from the questionbank list
+    QuestionBank[CurrentQuestion]()
+    
 
 def askquestion1():
   t.goto(-175,0)
-  screen.bgpic('taxfiles.gif')
   t.goto(255,0)
-  t.write("press n to continue. To select your answer choice press the letter next to the answer that you choose on the keyboard.")
   # Question 1
   t.penup()
   t.goto(0, 400)
@@ -103,19 +112,17 @@ def askquestion1():
 
   # GATHER USER INPUT
   screen.listen()
-  screen.onkey(rightanswer, "a")
-  screen.onkey(rightanswer, "A")
-  screen.onkey(wronganswer, "b")
-  screen.onkey(wronganswer, "B")
-  screen.onkey(wronganswer, "c")
-  screen.onkey(wronganswer, "C")
-  screen.onkey(wronganswer, "d")
-  screen.onkey(wronganswer, "D")
-  screen.onkey(nextquestion,"n")
+  screen.onkey(rightanswer,"a")
+  screen.onkey(rightanswer,"A")
+  screen.onkey(wronganswer,"b")
+  screen.onkey(wronganswer,"B")
+  screen.onkey(wronganswer,"c")
+  screen.onkey(wronganswer,"C")
+  screen.onkey(wronganswer,"d")
+  screen.onkey(wronganswer,"D")
   # tells how to identify right vs wrong by telling which one I put first in the
 
 def askquestion2():
-  screen.bgpic('taxfiles.gif')
   # Question 2
   t.penup()
   t.goto(0, 400)
@@ -156,11 +163,9 @@ def askquestion2():
   screen.onkey(wronganswer, "C")
   screen.onkey(wronganswer, "d")
   screen.onkey(wronganswer, "D")
-  screen.onkey(nextquestion,"n")
   # tells how to identify right vs wrong by telling which one I put first in the first block of code that I introduced this exact topic
 
 def askquestion3():
-  screen.bgcolor('black')
   # Question 3
   t.penup()
   t.goto(0, 400)
@@ -201,11 +206,9 @@ def askquestion3():
   screen.onkey(wronganswer, "C")
   screen.onkey(wronganswer, "d")
   screen.onkey(wronganswer, "D")
-  screen.onkey(nextquestion,"n")
   # tells how to identify right vs wrong by telling which one I put first in the first block of code that I introduced this exact topic
 
 def askquestion4():
-  screen.bgcolor('black')
   # Question 4
   t.penup()
   t.goto(0, 400)
@@ -246,13 +249,11 @@ def askquestion4():
   screen.onkey(wronganswer, "C")
   screen.onkey(wronganswer, "d")
   screen.onkey(wronganswer, "D")
-  screen.onkey(nextquestion,"n")
   # tells how to identify right vs wrong by telling which one I put first in the first block of code that I introduced this exact topic
 
 
 
 def askquestion5():
-  screen.bgcolor('black')
   # Question 5
   t.penup()
   t.goto(0, 400)
@@ -260,7 +261,7 @@ def askquestion5():
   style=('Courier', 20, 'bold')
   t.write(str(NumberofQuestion)+'. ASKQUESTION5  ,?',align='center', font=style)
   t.hideturtle()
-  # writes first question 1
+  # writes question 5
 
   t.goto(-400,360)
   t.write('a.xc vbnjkmm,',align='left', font=style)
@@ -293,16 +294,11 @@ def askquestion5():
   screen.onkeypress(wronganswer, "C")
   screen.onkeypress(wronganswer, "d")
   screen.onkeypress(wronganswer, "D")
-  screen.onkeypress(nextquestion,"n")
   # tells how to identify right vs wrong by telling which one I put first in the first block of code that I introduced this exact topic
 
 
 
-
-
-
 def askquestion6():
-  screen.bgcolor('black')
   # Question 6
   t.penup()
   t.goto(0, 400)
@@ -310,7 +306,7 @@ def askquestion6():
   style=('Courier', 20, 'bold')
   t.write(str(NumberofQuestion)+'. ASKQUESTION6  ,?',align='center', font=style) 
   t.hideturtle()
-  # writes first question 1
+  # writes question 6
 
   t.goto(-400,360)
   t.write('a.xc  xccx v cvxv cfv c,',align='left', font=style)
@@ -343,12 +339,10 @@ def askquestion6():
   screen.onkeypress(wronganswer, "C")
   screen.onkeypress(wronganswer, "d")
   screen.onkeypress(wronganswer, "D")
-  screen.onkeypress(nextquestion,"n")
   # tells how to identify right vs wrong by telling which one I put first in the first block of code that I introduced this exact topic
 
 
 def askquestion7():
-  screen.bgcolor('black')
   # Question 7
   t.penup()
   t.goto(0, 400)
@@ -356,8 +350,7 @@ def askquestion7():
   style=('Courier', 20, 'bold')
   t.write(str(NumberofQuestion)+'. ASKQUESTION7  ,?',align='center', font=style)
   t.hideturtle()
-  # writes first question 1
-
+  # write question 7
   t.goto(-400,360)
   t.write('a.qzsacf rdexwa,',align='left', font=style)
   t.hideturtle()
@@ -389,12 +382,10 @@ def askquestion7():
   screen.onkeypress(wronganswer, "C")
   screen.onkeypress(wronganswer, "d")
   screen.onkeypress(wronganswer, "D")
-  screen.onkeypress(nextquestion,"n")
   # tells how to identify right vs wrong by telling which one I put first in the first block of code that I introduced this exact topic
 
 
 def askquestion8():
-  screen.bgcolor('black')
   # Question 8
   t.penup()
   t.goto(0, 400)
@@ -402,8 +393,7 @@ def askquestion8():
   style=('Courier', 20, 'bold')
   t.write(str(NumberofQuestion)+'. ASKQUESTION8  ,?',align='center', font=style)
   t.hideturtle()
-  # writes first question 1
-
+  # writes question 1
   t.goto(-400,360)
   t.write('a.sofjmdkfmdskmd',align='left', font=style)
   t.hideturtle()
@@ -435,12 +425,10 @@ def askquestion8():
   screen.onkeypress(wronganswer, "C")
   screen.onkeypress(wronganswer, "d")
   screen.onkeypress(wronganswer, "D")
-  screen.onkeypress(nextquestion,"n")
   # tells how to identify right vs wrong by telling which one I put first in the first block of code that I introduced this exact topic
 
 
 def askquestion9():
-  screen.bgcolor('black')
   # Question 9
   t.penup()
   t.goto(0, 400)
@@ -448,7 +436,7 @@ def askquestion9():
   style=('Courier', 20, 'bold')
   t.write(str(NumberofQuestion)+'. ASKQUESTION9  ,?',align='center', font=style)
   t.hideturtle()
-  # writes first question 1
+  # writes question 9 
 
   t.goto(-400,360)
   t.write('a.xc  xccx v retgretrewg cfv c,',align='left', font=style)
@@ -494,7 +482,7 @@ def askquestion10():
   style=('Courier', 20, 'bold')
   t.write(str(NumberofQuestion)+'. ASKQUESTION10  ,?',align='center', font=style)
   t.hideturtle()
-  # writes first question 1
+  # writes question 10
 
   t.goto(-400,360)
   t.write('a.xc  xccx v cvxv cfv c,',align='left', font=style)
@@ -527,7 +515,6 @@ def askquestion10():
   screen.onkeypress(wronganswer, "C")
   screen.onkeypress(wronganswer, "d")
   screen.onkeypress(wronganswer, "D")
-  screen.onkeypress(nextquestion,"n")
   # tells how to identify right vs wrong by telling which one I put first in the first block of code that I introduced this exact topic
   
 
@@ -536,14 +523,12 @@ def askquestion10():
  
 
 #MAIN PROGRAM---------------------------------------------------
-
-
 # this is a list containing the different functions that ask the questions.
-QuestionBank=[askquestion1, askquestion2, askquestion3, askquestion4, askquestion5, askquestion6, askquestion7, askquestion8, askquestion9, askquestion10]
+QuestionBank=[askquestion1, askquestion2, askquestion3, askquestion4, askquestion5, askquestion6, askquestion7, askquestion8, askquestion9, askquestion10] 
 # creates an instance of turtle so it can write the question and answer options
 t=turtle.Turtle()
-# calls the askquestion functions from the questionbank list
-QuestionBank[CurrentQuestion]()
+# start asking questions 
+nextquestion()
 # runs the application in a loop
 screen.mainloop()
 
