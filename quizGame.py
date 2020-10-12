@@ -12,9 +12,8 @@ import random
 #   enter more questions (10 total), end quiz after 5 questions, randomize questions
 
 # GLOBAL VARIABLES ---------------------------------------------------------------
-# CurrentQuestion=random.randint(0,4)
-CurrentQuestion=0
-NumberofQuestion=0
+CurrentQuestion=random.randint(0,4)
+NumberofQuestion=1
 # uses the screen feature which is avalible in the turtle library for the question to be written on
 screen = turtle.Screen()
 # ensures that the screen will be that many pixles in hieght and width
@@ -57,25 +56,21 @@ def nextquestion():
   print("NumberofQuestion="+str(NumberofQuestion))
   # print(str(QuestionBank[CurrentQuestion]))
   # make sure to only ask 5 questions
-  if NumberofQuestion >4:
+  if NumberofQuestion >5:
   # contains instrustions for what to do if it has already asked 5 questions  
     t.penup()
     t.goto(-30,-30)  
     style=('Courier', 35, 'bold') 
     t.write('GOODBYE. THANKS FOR PLAYING!',align='center', font=style)
-    time.sleep(2)
+    time.sleep(7)
     exit()
 
-  elif NumberofQuestion==1: 
+  else:
     # calls the askquestion functions from the questionbank list
     QuestionBank[CurrentQuestion]()
-     
-  else:
     # contains instrustions for what to do if it has not yet asked 5 questions
     CurrentQuestion=CurrentQuestion+1
     NumberofQuestion=NumberofQuestion+1
-    # calls the askquestion functions from the questionbank list
-    QuestionBank[CurrentQuestion]()
     
 
 def askquestion1():
