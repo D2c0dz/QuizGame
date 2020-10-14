@@ -81,38 +81,38 @@ def askquestion1():
   t.goto(0, 400)
   t.color('blue')
   style=('Courier', 20, 'bold')
-  t.write(str(NumberofQuestion)+'. ASKQUESTION1  ,?',align='center', font=style)
+  t.write(str(NumberofQuestion)+'. As a practical definition of species, one cane say that they are a group of organisms characterized by all of the following exept they?',align='center', font=style)
   t.hideturtle()
   # writes first question 1
 
   t.goto(-400,360)
-  t.write('a.asdfasdfsadfasdf',align='left', font=style)
+  t.write('A.Do not normally interbreed with other species in nature',align='left', font=style)
   t.hideturtle()
   # writes first answer choice
 
   t.goto(-400,330)
-  t.write('b.adf', align='left', font=style)
+  t.write('B.Can be distinguished from other species', align='left', font=style)
   t.hideturtle()
   # writes second answer choice
 
   t.goto(-400,300)
-  t.write('c.dcfvgbhnjm', align='left', font=style)
+  t.write('C.Are incapable of hybridzation with other species', align='left', font=style)
   t.hideturtle()
   # writes third answer choice 
 
   t.goto(-400,270)
-  t.write('d.sdxfvgnjmkl', align='left', font=style)
+  t.write('D.Remain relatively constant', align='left', font=style)
   t.hideturtle()
   # writes fourth answer choice
 
   # GATHER USER INPUT
   screen.listen()
-  screen.onkey(rightanswer,"a")
-  screen.onkey(rightanswer,"A")
+  screen.onkey(wronganswer,"a")
+  screen.onkey(wronganswer,"A")
   screen.onkey(wronganswer,"b")
   screen.onkey(wronganswer,"B")
-  screen.onkey(wronganswer,"c")
-  screen.onkey(wronganswer,"C")
+  screen.onkey(rightanswer,"c")
+  screen.onkey(rightanswer,"C")
   screen.onkey(wronganswer,"d")
   screen.onkey(wronganswer,"D")
   # tells how to identify right vs wrong by telling which one I put first in the
@@ -123,41 +123,41 @@ def askquestion2():
   t.goto(0, 400)
   t.color('blue')
   style=('Courier', 20, 'bold')
-  t.write(str(NumberofQuestion)+'. ASKQUESTION2  ,?',align='center', font=style)
+  t.write(str(NumberofQuestion)+'. Viruses are denied a kingdom of their own beacause?',align='center', font=style)
   t.hideturtle()
   # writes first question 1
 
   t.goto(-400,360)
-  t.write('a.sdfsfgerfghj',align='left', font=style)
+  t.write('A.They are too poorly understood',align='left', font=style)
   t.hideturtle()
   # writes first answer choice
 
   t.goto(-400,330)
-  t.write('b.ghirghaswedrftgh', align='left', font=style)
+  t.write('B.They are too small', align='left', font=style)
   t.hideturtle()
   # writes second answer choice
 
   t.goto(-400,300)
-  t.write('c.edgufewqsdfgbht', align='left', font=style)
+  t.write('C.Their genetics cannot be determined', align='left', font=style)
   t.hideturtle()
   # writes third answer choice 
 
 
   t.goto(-400,270)
-  t.write('d.sdxrfdgthjnmkl', align='left', font=style)
+  t.write('D.They are not organisms', align='left', font=style)
   t.hideturtle()
   # writes fourth answer choice
 
   # GATHER USER INPUT
   screen.listen()
-  screen.onkey(rightanswer, "a")
-  screen.onkey(rightanswer, "A")
+  screen.onkey(wronganswer, "a")
+  screen.onkey(wronganswer, "A")
   screen.onkey(wronganswer, "b")
   screen.onkey(wronganswer, "B")
   screen.onkey(wronganswer, "c")
   screen.onkey(wronganswer, "C")
-  screen.onkey(wronganswer, "d")
-  screen.onkey(wronganswer, "D")
+  screen.onkey(rightanswer, "d")
+  screen.onkey(rightanswer, "D")
   # tells how to identify right vs wrong by telling which one I put first in the first block of code that I introduced this exact topic
 
 def askquestion3():
@@ -166,41 +166,50 @@ def askquestion3():
   t.goto(0, 400)
   t.color('blue')
   style=('Courier', 20, 'bold')
-  t.write(str(NumberofQuestion)+'. ASKQUESTION3  ,?',align='center', font=style)
+  t.write(str(NumberofQuestion)+'. In the current taxonomic system, families are groupes into?',align='center', font=style)
   t.hideturtle()
   # writes first question 1
 
   t.goto(-400,360)
-  t.write('a.sdfsfgerfghj',align='left', font=style)
+  t.write('A.Classes',align='left', font=style)
   t.hideturtle()
   # writes first answer choice
 
   t.goto(-400,330)
-  t.write('b.ghirghaswedrftgh', align='left', font=style)
+  t.write('B.Phyla', align='left', font=style)
   t.hideturtle()
   # writes second answer choice
 
   t.goto(-400,300)
-  t.write('c.edgufewqsdfgbht', align='left', font=style)
+  t.write('C.Orders', align='left', font=style)
   t.hideturtle()
   # writes third answer choice 
 
 
   t.goto(-400,270)
-  t.write('d.sdxrfdgthjnmkl', align='left', font=style)
+  t.write('D.Divisions', align='left', font=style)
+  t.hideturtle()
+  
+
+  t.goto(-400,240)
+  t.write('E.Kingdoms', align='left', font=style)
   t.hideturtle()
   # writes fourth answer choice
 
   # GATHER USER INPUT
   screen.listen()
-  screen.onkey(rightanswer, "a")
-  screen.onkey(rightanswer, "A")
+  screen.onkey(wronganswer, "a")
+  screen.onkey(wronganswer, "A")
   screen.onkey(wronganswer, "b")
   screen.onkey(wronganswer, "B")
-  screen.onkey(wronganswer, "c")
-  screen.onkey(wronganswer, "C")
+  screen.onkey(rightanswer, "c")
+  screen.onkey(rightanswer, "C")
   screen.onkey(wronganswer, "d")
   screen.onkey(wronganswer, "D")
+  screen.onkey(wronganswer, "d")
+  screen.onkey(wronganswer, "D")
+  screen.onkey(wronganswer, "e")
+  screen.onkey(wronganswer, "E")
   # tells how to identify right vs wrong by telling which one I put first in the first block of code that I introduced this exact topic
 
 def askquestion4():
@@ -209,28 +218,31 @@ def askquestion4():
   t.goto(0, 400)
   t.color('blue')
   style=('Courier', 20, 'bold')
-  t.write(str(NumberofQuestion)+'. ASKQUESTION4  ,?',align='center', font=style)
+  t.write(str(NumberofQuestion)+'. Currently, scientists have named approximatley _ species.',align='center', font=style)
   t.hideturtle()
   # writes first question 1
 
   t.goto(-400,360)
-  t.write('a.fcvfvhjh',align='left', font=style)
+  t.write('A.100,000',align='left', font=style)
   t.hideturtle()
   # writes first answer choice
 
   t.goto(-400,330)
-  t.write('b.asdfghjbgfddsffsghjk', align='left', font=style)
+  t.write('B.500,000', align='left', font=style)
   t.hideturtle()
   # writes second answer choice
 
   t.goto(-400,300)
-  t.write('c.edthejego dfgrtghimnt', align='left', font=style)
+  t.write('C.1,000,000', align='left', font=style)
   t.hideturtle()
   # writes third answer choice 
 
-
   t.goto(-400,270)
-  t.write('d.aswdddfchjk', align='left', font=style)
+  t.write('D.1,500,000', align='left', font=style)
+  t.hideturtle()
+
+  t.goto(-400,240)
+  t.write('E.10,000,000', align='left', font=style)
   t.hideturtle()
   # writes fourth answer choice
 
@@ -244,6 +256,8 @@ def askquestion4():
   screen.onkey(wronganswer, "C")
   screen.onkey(wronganswer, "d")
   screen.onkey(wronganswer, "D")
+  screen.onkey(wronganswer, "e")
+  screen.onkey(wronganswer, "E")
   # tells how to identify right vs wrong by telling which one I put first in the first block of code that I introduced this exact topic
 
 
@@ -254,37 +268,37 @@ def askquestion5():
   t.goto(0, 400)
   t.color('blue')
   style=('Courier', 20, 'bold')
-  t.write(str(NumberofQuestion)+'. ASKQUESTION5  ,?',align='center', font=style)
+  t.write(str(NumberofQuestion)+'. Taxonomy is best described as:',align='center', font=style)
   t.hideturtle()
   # writes question 5
 
   t.goto(-400,360)
-  t.write('a.xc vbnjkmm,',align='left', font=style)
+  t.write('A.A method of scientifically naming species that once creates, never changes',align='left', font=style)
   t.hideturtle()
   # writes first answer choice
 
   t.goto(-400,330)
-  t.write('b.aq zsdxcfgvhjkl', align='left', font=style)
+  t.write('B.Classifying organisms that reflect their biological ancestry, and is often the subject of revision', align='left', font=style)
   t.hideturtle()
   # writes second answer choice
 
   t.goto(-400,300)
-  t.write('c.fdfgvbhjk', align='left', font=style)
+  t.write('C.The art of preparing, stuffing, and mounting the skins of animals with lifelike effect', align='left', font=style)
   t.hideturtle()
   # writes third answer choice 
 
 
   t.goto(-400,270)
-  t.write('d.fvggcdfgh', align='left', font=style)
+  t.write('D.The study of animal skeletons', align='left', font=style)
   t.hideturtle()
   # writes fourth answer choice
 
   # GATHER USER INPUT
   screen.listen()
-  screen.onkeypress(rightanswer, "a")
-  screen.onkeypress(rightanswer, "A")
-  screen.onkeypress(wronganswer, "b")
-  screen.onkeypress(wronganswer, "B")
+  screen.onkeypress(wronganswer, "a")
+  screen.onkeypress(wronganswer, "A")
+  screen.onkeypress(rightanswer, "b")
+  screen.onkeypress(rightanswer, "B")
   screen.onkeypress(wronganswer, "c")
   screen.onkeypress(wronganswer, "C")
   screen.onkeypress(wronganswer, "d")
@@ -299,39 +313,39 @@ def askquestion6():
   t.goto(0, 400)
   t.color('blue')
   style=('Courier', 20, 'bold')
-  t.write(str(NumberofQuestion)+'. ASKQUESTION6  ,?',align='center', font=style) 
+  t.write(str(NumberofQuestion)+'. Which of the following is a kingdom classification?',align='center', font=style) 
   t.hideturtle()
   # writes question 6
 
   t.goto(-400,360)
-  t.write('a.xc  xccx v cvxv cfv c,',align='left', font=style)
+  t.write('A.Plants',align='left', font=style)
   t.hideturtle()
   # writes first answer choice
 
   t.goto(-400,330)
-  t.write('b. jhhhhlokklgfhj', align='left', font=style)
+  t.write('B.Animals', align='left', font=style)
   t.hideturtle()
   # writes second answer choice
 
   t.goto(-400,300)
-  t.write('c.fagdgfhgjik,lkhggfgdefgf', align='left', font=style)
+  t.write('C.A & B', align='left', font=style)
   t.hideturtle()
   # writes third answer choice 
 
 
   t.goto(-400,270)
-  t.write('d.asygfjdnjifsdfhgfujrfednvdfjiudujnmng', align='left', font=style)
+  t.write('D.Prosit', align='left', font=style)
   t.hideturtle()
   # writes fourth answer choice
 
   # GATHER USER INPUT
   screen.listen()
-  screen.onkeypress(rightanswer, "a")
-  screen.onkeypress(rightanswer, "A")
+  screen.onkeypress(wronganswer, "a")
+  screen.onkeypress(wronganswer, "A")
   screen.onkeypress(wronganswer, "b")
   screen.onkeypress(wronganswer, "B")
-  screen.onkeypress(wronganswer, "c")
-  screen.onkeypress(wronganswer, "C")
+  screen.onkeypress(rightanswer, "c")
+  screen.onkeypress(rightanswer, "C")
   screen.onkeypress(wronganswer, "d")
   screen.onkeypress(wronganswer, "D")
   # tells how to identify right vs wrong by telling which one I put first in the first block of code that I introduced this exact topic
@@ -343,38 +357,38 @@ def askquestion7():
   t.goto(0, 400)
   t.color('blue')
   style=('Courier', 20, 'bold')
-  t.write(str(NumberofQuestion)+'. ASKQUESTION7  ,?',align='center', font=style)
+  t.write(str(NumberofQuestion)+'. Which one of the following is NOT covered under Taxonomy?',align='center', font=style)
   t.hideturtle()
   # write question 7
   t.goto(-400,360)
-  t.write('a.qzsacf rdexwa,',align='left', font=style)
+  t.write('A. Alpha Taxonomy',align='left', font=style)
   t.hideturtle()
   # writes first answer choice
 
   t.goto(-400,330)
-  t.write('b. dfjgufdhgndjx', align='left', font=style)
+  t.write('B. Beta Taxonomy', align='left', font=style)
   t.hideturtle()
   # writes second answer choice
 
   t.goto(-400,300)
-  t.write('c.wf yhtg6e4rf5,546y', align='left', font=style)
+  t.write('C. Delta Taxonomy', align='left', font=style)
   t.hideturtle()
   # writes third answer choice 
 
 
   t.goto(-400,270)
-  t.write('d.2e s c6hgty7ufvbvr gjjur', align='left', font=style)
+  t.write('D. Gamma Taxonomy', align='left', font=style)
   t.hideturtle()
   # writes fourth answer choice
 
   # GATHER USER INPUT
   screen.listen()
-  screen.onkeypress(rightanswer, "a")
-  screen.onkeypress(rightanswer, "A")
+  screen.onkeypress(wronganswer, "a")
+  screen.onkeypress(wronganswer, "A")
   screen.onkeypress(wronganswer, "b")
   screen.onkeypress(wronganswer, "B")
-  screen.onkeypress(wronganswer, "c")
-  screen.onkeypress(wronganswer, "C")
+  screen.onkeypress(rightanswer, "c")
+  screen.onkeypress(rightanswer, "C")
   screen.onkeypress(wronganswer, "d")
   screen.onkeypress(wronganswer, "D")
   # tells how to identify right vs wrong by telling which one I put first in the first block of code that I introduced this exact topic
@@ -386,38 +400,38 @@ def askquestion8():
   t.goto(0, 400)
   t.color('blue')
   style=('Courier', 20, 'bold')
-  t.write(str(NumberofQuestion)+'. ASKQUESTION8  ,?',align='center', font=style)
+  t.write(str(NumberofQuestion)+'. What is the term given to a duplicate specimen of the original type?',align='center', font=style)
   t.hideturtle()
   # writes question 1
   t.goto(-400,360)
-  t.write('a.sofjmdkfmdskmd',align='left', font=style)
+  t.write('A.Lectotype',align='left', font=style)
   t.hideturtle()
   # writes first answer choice
 
   t.goto(-400,330)
-  t.write('b. sdjmfgndxjfnj', align='left', font=style)
+  t.write('B.Holotype', align='left', font=style)
   t.hideturtle()
   # writes second answer choice
 
   t.goto(-400,300)
-  t.write('c.z,dfsnmihjughfsjudegbhvnjfb vf', align='left', font=style)
+  t.write('C.Isotype', align='left', font=style)
   t.hideturtle()
   # writes third answer choice 
 
 
   t.goto(-400,270)
-  t.write('d.jdfgher vhjdsffbnvyhsdfgh', align='left', font=style)
+  t.write('D.Neotype', align='left', font=style)
   t.hideturtle()
   # writes fourth answer choice
 
   # GATHER USER INPUT
   screen.listen()
-  screen.onkeypress(rightanswer, "a")
-  screen.onkeypress(rightanswer, "A")
+  screen.onkeypress(wronganswer, "a")
+  screen.onkeypress(wronganswer, "A")
   screen.onkeypress(wronganswer, "b")
   screen.onkeypress(wronganswer, "B")
-  screen.onkeypress(wronganswer, "c")
-  screen.onkeypress(wronganswer, "C")
+  screen.onkeypress(rightanswer, "c")
+  screen.onkeypress(rightanswer, "C")
   screen.onkeypress(wronganswer, "d")
   screen.onkeypress(wronganswer, "D")
   # tells how to identify right vs wrong by telling which one I put first in the first block of code that I introduced this exact topic
@@ -429,28 +443,28 @@ def askquestion9():
   t.goto(0, 400)
   t.color('blue')
   style=('Courier', 20, 'bold')
-  t.write(str(NumberofQuestion)+'. ASKQUESTION9  ,?',align='center', font=style)
+  t.write(str(NumberofQuestion)+'. What is the definition of classification?',align='center', font=style)
   t.hideturtle()
   # writes question 9 
 
   t.goto(-400,360)
-  t.write('a.xc  xccx v retgretrewg cfv c,',align='left', font=style)
+  t.write('A.To organize a variety of items',align='left', font=style)
   t.hideturtle()
   # writes first answer choice
 
   t.goto(-400,330)
-  t.write('b. jhhreghj', align='left', font=style)
+  t.write('B.A group of similar and closley related items', align='left', font=style)
   t.hideturtle()
   # writes second answer choice
 
   t.goto(-400,300)
-  t.write('c.ghjmk,o', align='left', font=style)
+  t.write('C.A set or category of things having some property or attribute in common and differentiated from others by kind, type, or quality.', align='left', font=style)
   t.hideturtle()
   # writes third answer choice 
 
 
   t.goto(-400,270)
-  t.write('d.hfcnvx jkmbgu', align='left', font=style)
+  t.write('D.Scientists who classify animals into groups', align='left', font=style)
   t.hideturtle()
   # writes fourth answer choice
 
@@ -469,7 +483,6 @@ def askquestion9():
 
 
 def askquestion10():
-  screen.bgpic('taxfiles.gif')
   # Question 10
   t.penup()
   t.goto(0, 400)
