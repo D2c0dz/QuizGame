@@ -12,7 +12,8 @@ import random
 #   enter more questions (10 total), end quiz after 5 questions, randomize questions
 
 # GLOBAL VARIABLES ---------------------------------------------------------------
-CurrentQuestion=random.randint(0,4)
+# CurrentQuestion=random.randint(0,4)
+CurrentQuestion=1
 NumberofQuestion=1
 # uses the screen feature which is avalible in the turtle library for the question to be written on
 screen = turtle.Screen()
@@ -56,8 +57,11 @@ def nextquestion():
   print("NumberofQuestion="+str(NumberofQuestion))
   # print(str(QuestionBank[CurrentQuestion]))
   # make sure to only ask 5 questions
-  if NumberofQuestion >5:
-  # contains instrustions for what to do if it has already asked 5 questions  
+  if NumberofQuestion >10:
+  # contains instrustions for what to do if it has already asked 5 questions                                                                	
+
+
+
     t.penup()
     t.goto(-30,-30)  
     style=('Courier', 35, 'bold') 
@@ -81,41 +85,37 @@ def askquestion1():
   t.goto(0, 400)
   t.color('blue')
   style=('Courier', 20, 'bold')
-  t.write(str(NumberofQuestion)+'. As a practical definition of species, one cane say that they are a group of organisms characterized by all of the following exept they?',align='center', font=style)
+  t.write(str(NumberofQuestion)+'. Most species: ',align='center', font=style)
   t.hideturtle()
   # writes first question 1
 
+
   t.goto(-400,360)
-  t.write('A.Do not normally interbreed with other species in nature',align='left', font=style)
+  t.write('A.Are larger than 1 foot in lengthe',align='left', font=style)
   t.hideturtle()
   # writes first answer choice
 
   t.goto(-400,330)
-  t.write('B.Can be distinguished from other species', align='left', font=style)
+  t.write('B.Live in tropical regions', align='left', font=style)
   t.hideturtle()
   # writes second answer choice
 
   t.goto(-400,300)
-  t.write('C.Are incapable of hybridzation with other species', align='left', font=style)
+  t.write('C.Live in temperate regions', align='left', font=style)
   t.hideturtle()
   # writes third answer choice 
 
-  t.goto(-400,270)
-  t.write('D.Remain relatively constant', align='left', font=style)
-  t.hideturtle()
-  # writes fourth answer choice
+
 
   # GATHER USER INPUT
   screen.listen()
   screen.onkey(wronganswer,"a")
   screen.onkey(wronganswer,"A")
-  screen.onkey(wronganswer,"b")
-  screen.onkey(wronganswer,"B")
-  screen.onkey(rightanswer,"c")
-  screen.onkey(rightanswer,"C")
-  screen.onkey(wronganswer,"d")
-  screen.onkey(wronganswer,"D")
-  # tells how to identify right vs wrong by telling which one I put first in the
+  screen.onkey(rightanswer,"b")
+  screen.onkey(rightanswer,"B")
+  screen.onkey(wronganswer,"c")
+  screen.onkey(wronganswer,"C")
+ # tells how to identify right vs wrong by telling which one I put first in the
 
 def askquestion2():
   # Question 2
@@ -267,28 +267,29 @@ def askquestion5():
   t.penup()
   t.goto(0, 400)
   t.color('blue')
-  style=('Courier', 20, 'bold')
+  style=('Courier', 16, 'bold')
+  
   t.write(str(NumberofQuestion)+'. Taxonomy is best described as:',align='center', font=style)
   t.hideturtle()
   # writes question 5
 
-  t.goto(-400,360)
-  t.write('A.A method of scientifically naming species that once creates, never changes',align='left', font=style)
+  t.goto(-600,360)
+  t.write('A.A method of scientifically naming species that never changes',align='left', font=style)
   t.hideturtle()
   # writes first answer choice
 
-  t.goto(-400,330)
-  t.write('B.Classifying organisms that reflect their biological ancestry, and is often the subject of revision', align='left', font=style)
+  t.goto(-600,330)
+  t.write('B.Classifying organisms by biological traits, w/occassional revision', align='left', font=style)
   t.hideturtle()
   # writes second answer choice
 
-  t.goto(-400,300)
-  t.write('C.The art of preparing, stuffing, and mounting the skins of animals with lifelike effect', align='left', font=style)
+  t.goto(-600,300)
+  t.write('C.Preparing, and stuffing the skins of animals with lifelike effect', align='left', font=style)
   t.hideturtle()
   # writes third answer choice 
 
 
-  t.goto(-400,270)
+  t.goto(-600,270)
   t.write('D.The study of animal skeletons', align='left', font=style)
   t.hideturtle()
   # writes fourth answer choice
