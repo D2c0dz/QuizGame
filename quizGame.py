@@ -12,20 +12,22 @@ import random
 #   enter more questions (10 total), end quiz after 5 questions, randomize questions
 
 # GLOBAL VARIABLES ---------------------------------------------------------------
-# CurrentQuestion=random.randint(0,4)
-CurrentQuestion=1
+CurrentQuestion=random.randint(0,4)
 NumberofQuestion=1
+Score=0
 # uses the screen feature which is avalible in the turtle library for the question to be written on
 screen = turtle.Screen()
 # ensures that the screen will be that many pixles in hieght and width
 screen.setup(1280,1024)
 # FUNCTIONS-----------------------------------------------------------------------
 def rightanswer():
+  global Score
   # call when user enters
   t.goto(30,30) 
   t.color('green')
   style=('Courier', 20, 'bold')
   t.write('CORRECT!',align='right', font=style)
+  Score=Score+1
   time.sleep(3)
   nextquestion()
 
@@ -45,6 +47,7 @@ def wronganswer():
   nextquestion()
 
 def nextquestion():
+  t.color('blue')  
 # when user put their answer clear the screen and call the next question
   # clears the screen for the next question
   screen.clearscreen()
@@ -53,16 +56,20 @@ def nextquestion():
   
   screen.bgpic("taxonomy.gif")
 
+  # print debug info to console
   print("CurrentQuestion="+str(CurrentQuestion))
   print("NumberofQuestion="+str(NumberofQuestion))
+  print("Score="+str(Score))
   # print(str(QuestionBank[CurrentQuestion]))
+  
   # make sure to only ask 5 questions
-  if NumberofQuestion >10:
+  if NumberofQuestion >5:
   # contains instrustions for what to do if it has already asked 5 questions                                                                	
 
-
-
     t.penup()
+    t.goto(-30,250)  
+    style=('Courier', 40, 'bold') 
+    t.write('You got '+(str(Score)) +' out of 5 correct!',align='center', font=style)
     t.goto(-30,-30)  
     style=('Courier', 35, 'bold') 
     t.write('GOODBYE. THANKS FOR PLAYING!',align='center', font=style)
@@ -91,7 +98,7 @@ def askquestion1():
 
 
   t.goto(-400,360)
-  t.write('A.Are larger than 1 foot in lengthe',align='left', font=style)
+  t.write('A.Are larger than 1 foot in length',align='left', font=style)
   t.hideturtle()
   # writes first answer choice
 
@@ -103,7 +110,15 @@ def askquestion1():
   t.goto(-400,300)
   t.write('C.Live in temperate regions', align='left', font=style)
   t.hideturtle()
-  # writes third answer choice 
+  # writes third answer choice
+
+  t.goto(-400,270)
+  t.write('D.Are reptiles', align='left', font=style)
+  t.hideturtle()
+  # writes third answer choice
+
+
+  
 
 
 
@@ -115,6 +130,9 @@ def askquestion1():
   screen.onkey(rightanswer,"B")
   screen.onkey(wronganswer,"c")
   screen.onkey(wronganswer,"C")
+  screen.onkey(wronganswer,"d")
+  screen.onkey(wronganswer,"D")
+ 
  # tells how to identify right vs wrong by telling which one I put first in the
 
 def askquestion2():
@@ -123,7 +141,7 @@ def askquestion2():
   t.goto(0, 400)
   t.color('blue')
   style=('Courier', 20, 'bold')
-  t.write(str(NumberofQuestion)+'. Viruses are denied a kingdom of their own beacause?',align='center', font=style)
+  t.write(str(NumberofQuestion)+'. Viruses are denied a kingdom of their own because?',align='center', font=style)
   t.hideturtle()
   # writes first question 1
 
@@ -166,7 +184,7 @@ def askquestion3():
   t.goto(0, 400)
   t.color('blue')
   style=('Courier', 20, 'bold')
-  t.write(str(NumberofQuestion)+'. In the current taxonomic system, families are groupes into?',align='center', font=style)
+  t.write(str(NumberofQuestion)+'. In the current taxonomic system, families are grouped into?',align='center', font=style)
   t.hideturtle()
   # writes first question 1
 
@@ -218,31 +236,31 @@ def askquestion4():
   t.goto(0, 400)
   t.color('blue')
   style=('Courier', 20, 'bold')
-  t.write(str(NumberofQuestion)+'. Currently, scientists have named approximatley _ species.',align='center', font=style)
+  t.write(str(NumberofQuestion)+'. How many levels are in the Taxonomic hierarchy?',align='center', font=style)
   t.hideturtle()
   # writes first question 1
 
   t.goto(-400,360)
-  t.write('A.100,000',align='left', font=style)
+  t.write('A.8',align='left', font=style)
   t.hideturtle()
   # writes first answer choice
 
   t.goto(-400,330)
-  t.write('B.500,000', align='left', font=style)
+  t.write('B.6', align='left', font=style)
   t.hideturtle()
   # writes second answer choice
 
   t.goto(-400,300)
-  t.write('C.1,000,000', align='left', font=style)
+  t.write('C.7', align='left', font=style)
   t.hideturtle()
   # writes third answer choice 
 
   t.goto(-400,270)
-  t.write('D.1,500,000', align='left', font=style)
+  t.write('D.9', align='left', font=style)
   t.hideturtle()
 
   t.goto(-400,240)
-  t.write('E.10,000,000', align='left', font=style)
+  t.write('E.123', align='left', font=style)
   t.hideturtle()
   # writes fourth answer choice
 
@@ -314,41 +332,26 @@ def askquestion6():
   t.goto(0, 400)
   t.color('blue')
   style=('Courier', 20, 'bold')
-  t.write(str(NumberofQuestion)+'. Which of the following is a kingdom classification?',align='center', font=style) 
+  t.write(str(NumberofQuestion)+'. True or False: Dogs and wolves are in the same Genus?',align='center', font=style) 
   t.hideturtle()
   # writes question 6
 
   t.goto(-400,360)
-  t.write('A.Plants',align='left', font=style)
+  t.write('A.True',align='left', font=style)
   t.hideturtle()
   # writes first answer choice
 
   t.goto(-400,330)
-  t.write('B.Animals', align='left', font=style)
+  t.write('B.False', align='left', font=style)
   t.hideturtle()
   # writes second answer choice
 
-  t.goto(-400,300)
-  t.write('C.A & B', align='left', font=style)
-  t.hideturtle()
-  # writes third answer choice 
-
-
-  t.goto(-400,270)
-  t.write('D.Prosit', align='left', font=style)
-  t.hideturtle()
-  # writes fourth answer choice
-
   # GATHER USER INPUT
   screen.listen()
-  screen.onkeypress(wronganswer, "a")
-  screen.onkeypress(wronganswer, "A")
+  screen.onkeypress(rightanswer, "a")
+  screen.onkeypress(rightanswer, "A")
   screen.onkeypress(wronganswer, "b")
   screen.onkeypress(wronganswer, "B")
-  screen.onkeypress(rightanswer, "c")
-  screen.onkeypress(rightanswer, "C")
-  screen.onkeypress(wronganswer, "d")
-  screen.onkeypress(wronganswer, "D")
   # tells how to identify right vs wrong by telling which one I put first in the first block of code that I introduced this exact topic
 
 
@@ -358,40 +361,25 @@ def askquestion7():
   t.goto(0, 400)
   t.color('blue')
   style=('Courier', 20, 'bold')
-  t.write(str(NumberofQuestion)+'. Which one of the following is NOT covered under Taxonomy?',align='center', font=style)
+  t.write(str(NumberofQuestion)+'. True or False: Dogs and wolves are in the same Species?',align='center', font=style)
   t.hideturtle()
   # write question 7
   t.goto(-400,360)
-  t.write('A. Alpha Taxonomy',align='left', font=style)
+  t.write('A. True',align='left', font=style)
   t.hideturtle()
   # writes first answer choice
 
   t.goto(-400,330)
-  t.write('B. Beta Taxonomy', align='left', font=style)
+  t.write('B. False', align='left', font=style)
   t.hideturtle()
   # writes second answer choice
-
-  t.goto(-400,300)
-  t.write('C. Delta Taxonomy', align='left', font=style)
-  t.hideturtle()
-  # writes third answer choice 
-
-
-  t.goto(-400,270)
-  t.write('D. Gamma Taxonomy', align='left', font=style)
-  t.hideturtle()
-  # writes fourth answer choice
 
   # GATHER USER INPUT
   screen.listen()
   screen.onkeypress(wronganswer, "a")
   screen.onkeypress(wronganswer, "A")
-  screen.onkeypress(wronganswer, "b")
-  screen.onkeypress(wronganswer, "B")
-  screen.onkeypress(rightanswer, "c")
-  screen.onkeypress(rightanswer, "C")
-  screen.onkeypress(wronganswer, "d")
-  screen.onkeypress(wronganswer, "D")
+  screen.onkeypress(rightanswer, "b")
+  screen.onkeypress(rightanswer, "B")
   # tells how to identify right vs wrong by telling which one I put first in the first block of code that I introduced this exact topic
 
 
@@ -400,28 +388,28 @@ def askquestion8():
   t.penup()
   t.goto(0, 400)
   t.color('blue')
-  style=('Courier', 20, 'bold')
-  t.write(str(NumberofQuestion)+'. What is the term given to a duplicate specimen of the original type?',align='center', font=style)
+  style=('Courier', 15, 'bold')
+  t.write(str(NumberofQuestion)+'. About how many species of sharks are there?',align='center', font=style)
   t.hideturtle()
   # writes question 1
   t.goto(-400,360)
-  t.write('A.Lectotype',align='left', font=style)
+  t.write('A.1',align='left', font=style)
   t.hideturtle()
   # writes first answer choice
 
   t.goto(-400,330)
-  t.write('B.Holotype', align='left', font=style)
+  t.write('B.100', align='left', font=style)
   t.hideturtle()
   # writes second answer choice
 
   t.goto(-400,300)
-  t.write('C.Isotype', align='left', font=style)
+  t.write('C.1,000', align='left', font=style)
   t.hideturtle()
   # writes third answer choice 
 
 
   t.goto(-400,270)
-  t.write('D.Neotype', align='left', font=style)
+  t.write('D.1,000,000', align='left', font=style)
   t.hideturtle()
   # writes fourth answer choice
 
@@ -443,28 +431,28 @@ def askquestion9():
   t.penup()
   t.goto(0, 400)
   t.color('blue')
-  style=('Courier', 20, 'bold')
+  style=('Courier', 15, 'bold')
   t.write(str(NumberofQuestion)+'. What is the definition of classification?',align='center', font=style)
   t.hideturtle()
   # writes question 9 
 
-  t.goto(-400,360)
+  t.goto(-600,360)
   t.write('A.To organize a variety of items',align='left', font=style)
   t.hideturtle()
   # writes first answer choice
 
-  t.goto(-400,330)
+  t.goto(-600,330)
   t.write('B.A group of similar and closley related items', align='left', font=style)
   t.hideturtle()
   # writes second answer choice
 
-  t.goto(-400,300)
-  t.write('C.A set or category of things having some property or attribute in common and differentiated from others by kind, type, or quality.', align='left', font=style)
+  t.goto(-600,300)
+  t.write('C.A set or category of things having some kind of property or attribute in common', align='left', font=style)
   t.hideturtle()
   # writes third answer choice 
 
 
-  t.goto(-400,270)
+  t.goto(-600,270)
   t.write('D.Scientists who classify animals into groups', align='left', font=style)
   t.hideturtle()
   # writes fourth answer choice
@@ -486,42 +474,42 @@ def askquestion9():
 def askquestion10():
   # Question 10
   t.penup()
-  t.goto(0, 400)
+  t.goto(10, 400)
   t.color('blue')
-  style=('Courier', 20, 'bold')
-  t.write(str(NumberofQuestion)+'. ASKQUESTION10  ,?',align='center', font=style)
+  style=('Courier', 15, 'bold')
+  t.write(str(NumberofQuestion)+'. A group of organisms at any level in a classification system is called a?',align='center', font=style)
   t.hideturtle()
   # writes question 10
 
-  t.goto(-400,360)
-  t.write('a.xc  xccx v cvxv cfv c,',align='left', font=style)
+  t.goto(-600,360)
+  t.write('A.Species',align='left', font=style)
   t.hideturtle()
   # writes first answer choice
 
-  t.goto(-400,330)
-  t.write('b. jhhhhlokklgfhj', align='left', font=style)
+  t.goto(-600,330)
+  t.write('B.Genus', align='left', font=style)
   t.hideturtle()
   # writes second answer choice
 
-  t.goto(-400,300)
-  t.write('c.fagdgfhgjik,lkhggfgdefgf', align='left', font=style)
+  t.goto(-600,300)
+  t.write('C.Taxon ', align='left', font=style)
   t.hideturtle()
   # writes third answer choice 
 
 
-  t.goto(-400,270)
-  t.write('d.asygfjdnjifsdfhgfujrfednvdfjiudujnmng', align='left', font=style)
+  t.goto(-600,270)
+  t.write('D.Phylum', align='left', font=style)
   t.hideturtle()
   # writes fourth answer choice
 
   # GATHER USER INPUT
   screen.listen()
-  screen.onkeypress(rightanswer, "a")
-  screen.onkeypress(rightanswer, "A")
+  screen.onkeypress(wronganswer, "a")
+  screen.onkeypress(wronganswer, "A")
   screen.onkeypress(wronganswer, "b")
   screen.onkeypress(wronganswer, "B")
-  screen.onkeypress(wronganswer, "c")
-  screen.onkeypress(wronganswer, "C")
+  screen.onkeypress(rightanswer, "c")
+  screen.onkeypress(rightanswer, "C")
   screen.onkeypress(wronganswer, "d")
   screen.onkeypress(wronganswer, "D")
   # tells how to identify right vs wrong by telling which one I put first in the first block of code that I introduced this exact topic
