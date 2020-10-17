@@ -8,9 +8,7 @@ import random
 #
 # REQUIREMENTS: python3, python3-tkinter, turtle, screen resolution = 1280 x 1024
 # Author: Darin Dhiman
-# TO DO:
-#   enter more questions (10 total), end quiz after 5 questions, randomize questions
-
+#################################################################################
 # GLOBAL VARIABLES ---------------------------------------------------------------
 CurrentQuestion=random.randint(0,4)
 NumberofQuestion=1
