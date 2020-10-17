@@ -22,9 +22,9 @@ The main section of the code will actually start the program, as everything else
 
 # Functions:
    * Each question is its own function, for example Question1()
-   * The NextQuestion() 
-        * There is an important function for asking the questions called nextquestion() which  clears the screen when each question has been answered and asks the next             question which is decided by CurrentQuestion(). It also contains an if statement so that it dosen't ask all 10 questions and when 5 questions are asked it will           display the score and say goodbye
-   * askquestion1() askquestion2() askquestion3() askquestion4() askquestion5() askquestion6() askquestion7() askquestion8() askquestion9() askquestion10(). They all ask questions 
+   * NextQuestion()
+        * this function clears the screen when each question has been answered and asks the next question which is decided by CurrentQuestion variable. It also contains an if statement so that it dosen't ask all the questions listed in the QuestionBank[], and when 5 questions are asked it will end the game and display the score and say goodbye
+   * askquestion1(), askquestion2(), ... - these contain the question text, prints the question, and has logic to check for the right answer 
    * rightanswer() - this function contains instructions on what to-do if the player gets the answer right
    * wronganswer() - this function contains instructions on what to-do if the player gets the answer wrong
 
