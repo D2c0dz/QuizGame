@@ -4,12 +4,12 @@ Anyone can use my quizGame program.  It is a quizzing engine that they could cus
 
 # Game Requirements:
 In order to run my quiz game program following are required:
- *Python Libraries: 
-   *Turtle (may require Tkinter, depending on your setup)
-   *Random
-   *Time
- *Monitor that supports a screen resolution of 1280 x 1024
- *Python3
+ * Python Libraries: 
+   * Turtle (may require Tkinter, depending on your setup)
+   * Random
+   * Time
+ * Monitor that supports a screen resolution of 1280 x 1024
+ * Python3
 
 # How the Game is coded:
 There are some global variables that need to be used by the functions to keep track of things:
