@@ -29,4 +29,4 @@ The main section of the code will actually start the program, as everything else
    * wronganswer() - this function contains instructions on what to-do if the player gets the answer wrong
 
 # Playing the Quiz Game:
-This app can be downloaded for free on github. To run the code on terminal you will need to type in "cd quizGame.py" and hit enter. Then type "python3 quizGame.py". In order to play this game, you can press the letter on the keyboard that is the same letter as the answer you think is correct. It will automatically move on to the next question after that.
+This app can be downloaded for free on github. To run the code on terminal you will need to type in "cd QuizGame" and hit enter. Then type "python3 quizGame.py". In order to play this game, you can press the letter on the keyboard that is the same letter as the answer you think is correct. It will automatically move on to the next question after that.
