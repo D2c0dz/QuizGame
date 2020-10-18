@@ -8,7 +8,7 @@ In order to run my quiz game program following are required:
    * Turtle (may require Tkinter, depending on your setup)
    * Random
    * Time
- * Monitor that supports a screen resolution of 1280 x 1024 Note:If the text is cutting of, then maximize or make tha game window full screen
+ * Monitor that supports a screen resolution of 1280 x 1024 Note: If the text is cutting of, then maximize or make the game window full screen
  * Python3
 
 # How the Game is coded:
